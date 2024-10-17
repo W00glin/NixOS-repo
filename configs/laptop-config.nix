@@ -79,44 +79,42 @@
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
 
-  # Utilities
-  audacity
-  cutecom
-  fastfetch
-  # flameshot - COmmented out since there is an error with the GUI
-  git
-  gnome.gnome-screenshot
-  gparted
-  htop
-  handbrake
-  ipmitool
-  localsend
-  nmap
-  qbittorrent
-  qemu
-  tmux
-  tor-browser
-  unzip
-  virtualbox
-  vscode
-  wireshark
-  obsidian
-  remmina
-  powershell
+    # Utilities
+    audacity
+    cutecom
+    fastfetch
+    # flameshot - Commented out since there is an error with the GUI
+    git
+    gnome.gnome-screenshot
+    gparted
+    htop
+    handbrake
+    ipmitool
+    localsend
+    nmap
+    qbittorrent
+    qemu
+    tmux
+    tor-browser
+    unzip
+    virtualbox
+    vscode
+    wireshark
+    obsidian
+    remmina
+    powershell
 
-  # Gaming
-  lutris
-  steam
-  pcsx2
-  dolphin-emu
-  # Gaming utilities
+    # Gaming
+    lutris
+    steam
+    pcsx2
+    dolphin-emu
 
-
-  # Themes
-  gnome-extension-manager
-  gnome.gnome-tweaks
-  nordic
-  numix-icon-theme-circle
+    # Themes
+    gnome-extension-manager
+    gnome.gnome-tweaks
+    nordic
+    numix-icon-theme-circle
 
   ];
 
@@ -163,4 +161,7 @@
       onevpl-intel-gpu  # For newer GPUs on NixOS <= 24.05
     ];
   };
+
+  # Loads kernel module for Xbox One wireless USB adapter (not tested).
+  hardware.xone.enable = true; # environment.systemPackages = with pkgs; [ linuxKernel.packages.linux_zen.xone ];
 }
