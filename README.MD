@@ -1,7 +1,7 @@
 # My NixOS config
 So I finally took the plunge. After awhile of hearing about this "hip" and "new" and "cool" declarative OS called NixOS, I finally decided to take the NixOS pill. I grabbed an old laptop. Nabbed the [NixOS installer w/GNOME](https://channels.nixos.org/nixos-24.05/latest-nixos-gnome-x86_64-linux.iso) from the site and gave it a spin.
 
-![dogshite meme](./bottom_tier_meme.jpg)
+![dogshite meme](./assets/bottom_tier_meme.jpgbottom_tier_meme.jpg)
 
 What started off as a fairly harmless pilot exercise has turned into what some would call an obsession. Its pretty incredible what the distro can do. I absolutely think I can replace NixOS with all of my ansible playbooks now.
 
