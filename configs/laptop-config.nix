@@ -99,6 +99,7 @@
     unzip
     virtualbox
     vscode
+    waydroid
     wireshark
     obsidian
     remmina
