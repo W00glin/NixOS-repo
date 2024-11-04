@@ -6,7 +6,7 @@ So I finally took the plunge. After awhile of hearing about this "hip" and "new"
 What started off as a fairly harmless pilot exercise has turned into what some would call an obsession. Its pretty incredible what the distro can do. I absolutely think I can replace NixOS with all of my ansible playbooks now.
 
 # This repo
-So this repo will serve as the location of my current NixOS config and "roadmap" of things I would like to learn or otherwise configure for my NixOS machines. This repo was setup with help and guidance from `Enron5` on the NixOS community forums - [thread](https://discourse.nixos.org/t/using-git-to-handle-and-manage-configuration-nix/38337/4)
+So this repo will serve as the location of my current NixOS config and "roadmap" of things I would like to learn or otherwise configure for my NixOS machines.
 
 ### To-do
 
