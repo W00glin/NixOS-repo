@@ -61,7 +61,7 @@
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ]; # Added "docker" group for Docker access
     packages = with pkgs; [
       # thunderbird
     ];
@@ -83,7 +83,6 @@
     audacity
     cutecom
     fastfetch
-    # flameshot - Commented out since there is an error with the GUI
     git
     gnome.gnome-screenshot
     gparted
@@ -117,6 +116,9 @@
     nordic
     numix-icon-theme-circle
 
+    # Docker CLI tools (added)
+    docker
+    docker-compose
   ];
 
   # Fonts.
@@ -128,6 +130,12 @@
     liberation_ttf
     roboto-mono
   ];
+
+  # Enable Docker service (added).
+  services.docker = {
+    enable = true; # Enable the Docker daemon
+    extraOptions = "--experimental"; # Optional: enable experimental Docker features
+  };
 
   # Enable virtualization for VirtualBox.
   virtualisation.virtualbox.host.enable = true;
