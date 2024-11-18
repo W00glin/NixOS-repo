@@ -97,7 +97,7 @@
     tmux
     tor-browser
     unzip
-    virtualbox
+    # virtualbox - commented out since there is an error - https://github.com/NixOS/nixpkgs/issues/76108#issuecomment-592195955
     vscode
     waydroid
     wireshark
