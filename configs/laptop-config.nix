@@ -80,6 +80,7 @@
   environment.systemPackages = with pkgs; [
 
     # Utilities
+    adoptopenjdk-icedtea-web
     audacity
     cutecom
     fastfetch
