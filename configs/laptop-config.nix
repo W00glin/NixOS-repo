@@ -94,6 +94,7 @@
     nmap
     qbittorrent
     qemu
+    tldr
     tmux
     tor-browser
     unzip
