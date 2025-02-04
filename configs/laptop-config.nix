@@ -95,6 +95,7 @@
     ollama
     qbittorrent
     qemu
+    tailscale
     tldr
     tmux
     tor-browser
