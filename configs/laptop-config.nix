@@ -92,6 +92,7 @@
     ipmitool
     localsend
     nmap
+    ollama
     qbittorrent
     qemu
     tldr
