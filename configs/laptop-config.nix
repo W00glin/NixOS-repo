@@ -109,6 +109,8 @@
     powershell
 
     # Gaming
+    moonlight-qt # Gaming Client
+    sunshine # Gaming Server
     lutris
     steam
     pcsx2
