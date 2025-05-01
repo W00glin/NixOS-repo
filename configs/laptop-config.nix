@@ -125,6 +125,9 @@
     # Docker CLI tools (added)
     docker
     docker-compose
+
+    # Social
+    signal-desktop
   ];
 
   # Fonts.
