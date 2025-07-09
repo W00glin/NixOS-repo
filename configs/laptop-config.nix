@@ -66,6 +66,8 @@
       # thunderbird
     ];
   };
+  # Install/run PGP for Kleopatra - see https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/33 for more info
+  programs.gnupg.agent.enable = true;
 
   # Install Firefox.
   programs.firefox.enable = true;
@@ -82,20 +84,22 @@
     # Utilities
     adoptopenjdk-icedtea-web
     audacity
+    calibre
     cutecom
     fastfetch
+    # flameshot - Commented out since there is an error with the GUI
     git
     gnome.gnome-screenshot
     gparted
     htop
     handbrake
+    img2pdf
     ipmitool
+    kleopatra
     localsend
     nmap
-    ollama
-    qbittorrent
+    #qbittorrent
     qemu
-    tailscale
     tldr
     tmux
     tor-browser
@@ -105,27 +109,24 @@
     waydroid
     wireshark
     obsidian
+    ollama
     remmina
+    pinentry # this is needed for Kleopatra. See https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/33 for more information
     powershell
 
     # Gaming
-    moonlight-qt # Gaming Client
-    sunshine # Gaming Server
     lutris
     steam
     pcsx2
     dolphin-emu
+    prismlauncher
 
     # Themes
     gnome-extension-manager
     gnome.gnome-tweaks
     nordic
     numix-icon-theme-circle
-
-    # Docker CLI tools (added)
-    docker
-    docker-compose
-
+    
     # Social
     signal-desktop
   ];
@@ -139,12 +140,6 @@
     liberation_ttf
     roboto-mono
   ];
-
-  # Enable Docker service (added).
-  services.docker = {
-    enable = true; # Enable the Docker daemon
-    extraOptions = "--experimental"; # Optional: enable experimental Docker features
-  };
 
   # Enable virtualization for VirtualBox.
   virtualisation.virtualbox.host.enable = true;
@@ -160,6 +155,9 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [ 22 ];
+  
+  # Enable/install Tailscale client
+  services.tailscale.enable = true;
 
   # Set system state version.
   system.stateVersion = "24.05";
@@ -179,7 +177,4 @@
       onevpl-intel-gpu  # For newer GPUs on NixOS <= 24.05
     ];
   };
-
-  # Loads kernel module for Xbox One wireless USB adapter (not tested).
-  hardware.xone.enable = true; # environment.systemPackages = with pkgs; [ linuxKernel.packages.linux_zen.xone ];
 }
