@@ -66,8 +66,6 @@
       # thunderbird
     ];
   };
-  # Install/run PGP for Kleopatra - see https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/33 for more info
-  programs.gnupg.agent.enable = true;
 
   # Install Firefox.
   programs.firefox.enable = true;
@@ -95,7 +93,6 @@
     handbrake
     img2pdf
     ipmitool
-    kleopatra
     localsend
     nmap
     #qbittorrent
@@ -111,7 +108,6 @@
     obsidian
     ollama
     remmina
-    pinentry # this is needed for Kleopatra. See https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/33 for more information
     powershell
 
     # Gaming
