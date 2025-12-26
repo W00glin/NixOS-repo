@@ -28,8 +28,7 @@
 
   # X11 + GNOME
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -124,23 +123,16 @@
     comic-mono
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     liberation_ttf
     roboto-mono
   ];
-
-
-  # VirtualBox
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  users.extraGroups.vboxusers.members = [ "kali" ];
   
   services.openssh.enable = true;
 
   networking.firewall.allowedTCPPorts = [ 22 ];
 
-  system.stateVersion = "24.05"; # Keep as-is when upgrading
-  };
+  system.stateVersion = "25.11"; # Changed for new builds
 
   # GPU acceleration (new option names)
   hardware.graphics = {
