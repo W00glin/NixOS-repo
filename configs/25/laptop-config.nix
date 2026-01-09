@@ -66,6 +66,7 @@
     cutecom
     easyeffects
     fastfetch
+    gimp2-with-plugins
     git
     gnome-screenshot        # FIXED: was gnome.gnome-screenshot
     gparted
