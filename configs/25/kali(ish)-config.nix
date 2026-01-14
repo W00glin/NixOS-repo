@@ -72,6 +72,7 @@
     dirbuster               #Brute force directories and files names on web/application servers
     ettercap                #Comprehensive suite for man in the middle attacks
     eyewitness              #Take screenshots of websites, and identify admin interfaces
+    exiftool                #ExifTool is a platform-independent Perl library plus a command-line application for reading, writing and editing meta information in a wide variety of files              
     fastfetch               #Actively maintained, feature-rich and performance oriented, neofetch like system information tool
     gemini-cli              #AI agent that brings the power of Gemini directly into your terminal
     gobuster                #Tool used to brute-force URIs, DNS subdomains, Virtual Host names on target web servers
@@ -86,6 +87,7 @@
     netdiscover             #Network address discovering tool, developed mainly for those wireless networks without dhcp server, it also works on hub/switched networks
     nikto                   #Web server scanner
     nmap                    #Free and open source utility for network discovery and security auditing
+    oletools                #Module to analyze MS OLE2 files and MS Office documents
     medusa                  #Speedy, parallel, and modular, login brute-forcer
     mimikatz                #Little tool to play with Windows security
     qemu                    #Generic and open source machine emulator and virtualizer
