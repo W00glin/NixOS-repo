@@ -75,6 +75,7 @@
     img2pdf
     ipmitool
     localsend
+    net-tools
     nmap
     qemu
     tldr
