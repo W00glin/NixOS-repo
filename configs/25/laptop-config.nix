@@ -83,6 +83,7 @@
     unzip
     vscode
     waydroid
+    wireguard-tools
     wireshark
     obsidian
     ollama
