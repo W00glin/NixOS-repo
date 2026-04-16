@@ -89,6 +89,7 @@
     obsidian
     ollama
     remmina
+    pciutils
     powershell
     protonup-qt
 
