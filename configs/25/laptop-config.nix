@@ -104,6 +104,14 @@
     nordic
     numix-icon-theme-circle
 
+    # GNOME Extensions
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.just-perfection
+    gnomeExtensions.tailscale-status
+    gnomeExtensions.user-themes
+    gnomeExtensions.wireguard-vpn-extension
+
     # Social
     signal-desktop
   ];
