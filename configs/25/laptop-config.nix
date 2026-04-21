@@ -89,7 +89,7 @@
     obsidian
     ollama
     remmina
-    rustdesk
+    rustdesk-flutter # NixOS wiki says this is the most current version
     pciutils
     powershell
     protonup-qt
