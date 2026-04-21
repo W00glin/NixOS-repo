@@ -89,6 +89,7 @@
     obsidian
     ollama
     remmina
+    rustdesk
     pciutils
     powershell
     protonup-qt
