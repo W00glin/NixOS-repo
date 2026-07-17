@@ -196,10 +196,7 @@
       # Intel GPU support (iGPU and Arc discrete)
       intel-media-driver
       intel-compute-runtime
-      
-      # AMD GPU support (Ryzen iGPU and discrete RDNA/RDNA2/RDNA3)
-      amdvlk
-      
+           
       # Vulkan support
       vulkan-loader
       vulkan-tools
