@@ -1,19 +1,35 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running 'nixos-help').
+
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
 
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos_asus";
+  networking.hostName = "New_Machine"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable networking
   networking.networkmanager.enable = true;
 
+  # Set your time zone.
   time.timeZone = "America/New_York";
 
+  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_US.UTF-8";
     LC_IDENTIFICATION = "en_US.UTF-8";
@@ -26,45 +42,61 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # X11 + GNOME
+  # Enable the X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
+  # Enable the GNOME Desktop Environment.
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
+    variant = "";
   };
 
+  # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # PipeWire + Pulse
-  services.pulseaudio.enable = false;   # replaced hardware.pulseaudio
+  # Enable sound with pipewire.
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+
+    # use the example session manager (no others are packaged yet so this is enabled by default,
+    # no need to redefine it in your config for now)
+    #media-session.enable = true;
   };
 
+  # Enable touchpad support (enabled default in most desktopManager).
+  # services.xserver.libinput.enable = true;
+
+  # Define a user account. Don't forget to set a password with 'passwd'.
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin";
     extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+    #  thunderbird
+    ];
   };
 
+  # Install firefox.
   programs.firefox.enable = true;
 
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   environment.systemPackages = with pkgs; [
     adoptopenjdk-icedtea-web
     audacity
     calibre
     cutecom
-    easyeffects
     fastfetch
     gimp-with-plugins
     git
@@ -74,10 +106,11 @@
     handbrake
     img2pdf
     ipmitool
+    libreoffice
     localsend
-    net-tools
     nmap
     qemu
+    tailscale
     tldr
     tmux
     tor-browser
@@ -89,10 +122,11 @@
     obsidian
     ollama
     remmina
-    rustdesk-flutter # NixOS wiki says this is the most current version
-    pciutils
     powershell
     protonup-qt
+    wineWowPackages.stable
+    winetricks
+    bottles
 
     # Gaming
     lutris
@@ -123,7 +157,7 @@
     comic-mono
     noto-fonts
     noto-fonts-cjk-sans
-    noto-fonts-emoji
+    noto-fonts-color-emoji
     liberation_ttf
     roboto-mono
   ];
@@ -151,11 +185,24 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  # GPU acceleration (new option names)
+  # Wine config
+  # Enable 32-bit support (required for most Wine apps)
+  hardware.graphics.enable32Bit = true;
+
+  # GPU acceleration - supports Intel and AMD (integrated or discrete)
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      vpl-gpu-rt     # FIXED rename from onevpl-intel-gpu
+      # Intel GPU support (iGPU and Arc discrete)
+      intel-media-driver
+      intel-compute-runtime
+      
+      # AMD GPU support (Ryzen iGPU and discrete RDNA/RDNA2/RDNA3)
+      amdvlk
+      
+      # Vulkan support
+      vulkan-loader
+      vulkan-tools
     ];
   };
 }
