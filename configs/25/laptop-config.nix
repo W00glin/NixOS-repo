@@ -185,13 +185,10 @@
     localNetworkGameTransfers.openFirewall = true;
   };
 
-  # Wine config
-  # Enable 32-bit support (required for most Wine apps)
-  hardware.graphics.enable32Bit = true;
-
   # GPU acceleration - supports Intel and AMD (integrated or discrete)
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       # Intel GPU support (iGPU and Arc discrete)
       intel-media-driver
@@ -200,6 +197,12 @@
       # Vulkan support
       vulkan-loader
       vulkan-tools
+    ];
+  # 32-bit drivers (Crucial for Wine/Lutris)
+    extraPackages32 = with pkgs.pkgsi686Linux; [
+      intel-media-driver
+      # vulkan-loader is typically handled inherently by enable32Bit, 
+      # but adding pkgsi686Linux.intel-media-driver fills the Intel gap.
     ];
   };
 }
