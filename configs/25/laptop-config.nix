@@ -107,6 +107,7 @@
     img2pdf
     ipmitool
     libreoffice
+    llama-cpp
     localsend
     nmap
     qemu
