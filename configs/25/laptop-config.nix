@@ -81,7 +81,7 @@
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -170,6 +170,11 @@
   virtualisation.virtualbox.host.enable = true;
   virtualisation.virtualbox.host.enableExtensionPack = true;
   users.extraGroups.vboxusers.members = [ "benjamin" ];
+
+  # Docker
+  virtualisation.docker = {
+  enable = true;
+  };
   
   services.openssh.enable = true;
 
