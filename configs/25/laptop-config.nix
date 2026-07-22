@@ -83,7 +83,6 @@
     description = "Benjamin";
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
-    #  thunderbird
     ];
   };
 
@@ -98,6 +97,7 @@
     calibre
     cutecom
     fastfetch
+    gemini-cli
     gimp-with-plugins
     git
     gnome-screenshot        # FIXED: was gnome.gnome-screenshot
