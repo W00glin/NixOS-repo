@@ -81,7 +81,7 @@
   users.users.benjamin = {
     isNormalUser = true;
     description = "Benjamin";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd"];
     packages = with pkgs; [
     ];
   };
@@ -116,6 +116,7 @@
     tmux
     tor-browser
     unzip
+    virt-manager
     vscode
     waydroid
     wireguard-tools
@@ -171,19 +172,26 @@
   virtualisation.virtualbox.host.enableExtensionPack = true;
   users.extraGroups.vboxusers.members = [ "benjamin" ];
 
+  # virt-manager
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
   # Docker
   virtualisation.docker = {
   enable = true;
   };
-  
-  services.openssh.enable = true;
 
+  # SSH
+  services.openssh.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
 
+  # Tailscale
   services.tailscale.enable = true;
 
+  # System Version
   system.stateVersion = "24.05"; # Keep as-is when upgrading
 
+  # Steam
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
