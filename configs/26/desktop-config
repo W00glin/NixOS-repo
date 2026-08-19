@@ -127,7 +127,6 @@
     remmina
     powershell
     protonup-qt
-    wineWowPackages.stable
     winetricks
     bottles
 
@@ -207,12 +206,6 @@
       # Vulkan support
       vulkan-loader
       vulkan-tools
-    ];
-  # 32-bit drivers (Crucial for Wine/Lutris)
-    extraPackages32 = with pkgs.pkgsi686Linux; [
-      intel-media-driver
-      # vulkan-loader is typically handled inherently by enable32Bit, 
-      # but adding pkgsi686Linux.intel-media-driver fills the Intel gap.
     ];
   };
 }
