@@ -168,11 +168,6 @@
   # xone - Xbox contoller driver
   hardware.xone.enable = true;
 
-  # VirtualBox
-  virtualisation.virtualbox.host.enable = true;
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  users.extraGroups.vboxusers.members = [ "benjamin" ];
-
   # virt-manager
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
