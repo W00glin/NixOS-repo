@@ -113,6 +113,7 @@
     ollama-rocm
     qemu
     tailscale
+    telegram-desktop
     tldr
     tmux
     tor-browser
