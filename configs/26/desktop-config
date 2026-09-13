@@ -111,10 +111,8 @@
     llama-cpp
     localsend
     nmap
-    ollama-rocm
     qemu
     tailscale
-    telegram-desktop
     tldr
     tmux
     tor-browser
@@ -125,7 +123,7 @@
     wireguard-tools
     wireshark
     obsidian
-    ollama
+    opencode
     remmina
     powershell
     protonup-qt
@@ -155,6 +153,7 @@
 
     # Social
     signal-desktop
+    telegram-desktop
   ];
 
   fonts.packages = with pkgs; [
@@ -194,6 +193,11 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+  };
+  # Ollama systemd
+    services.ollama = {
+    enable = true;
+    package = unstable.ollama-vulkan;
   };
 
   # GPU acceleration - supports Intel and AMD (integrated or discrete)
