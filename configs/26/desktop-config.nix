@@ -93,6 +93,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     adoptopenjdk-icedtea-web
+    appimage-run
     audacity
     calibre
     cutecom
@@ -109,6 +110,7 @@
     ipmitool
     libreoffice
     llama-cpp
+    lmstudio
     localsend
     nmap
     qemu
